@@ -18,20 +18,31 @@
 *   Base
 -----------------------------------------------*/
 body{
-
+    font-family: 'Lato', sans-serif;
+    color: #212121;
+    font-size: 16px;
+    line-heigh: 1.5;
 }
 
 h1,h2,h3,h4{
 
 }
 
-ol{
+ol,ul{
     margin: 0;
     padding: 0;
     list-style-type: none;
 
 }
-
+a{
+    color:#ff4081;
+    transition: 0.2s ease-in-out;
+}
+a:active,
+a:hover,
+a:focus{
+    color: #212121;
+}
 
 /*-----------------------------------------------
 *   Hero
@@ -66,6 +77,13 @@ ol{
 .news-link{
     color: #3f51b5;
     font-size: 24px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.news-meta-item{
+    display: inline;
+    margin-right: 15px;
 }
 /*-----------------------------------------------
 *   Container
@@ -73,4 +91,56 @@ ol{
 .container{
     max-width: 800px;
     margin: 0 auto;
+}
+/*-----------------------------------------------
+*   States
+-----------------------------------------------*/
+.is-liked{
+    animation: flash 2s;
+}
+
+.is-visible{
+    opacity:1;
+    visibility: visible;
+    height: auto;
+}
+
+/*-----------------------------------------------
+*   Form
+-----------------------------------------------*/
+.form{
+    height:0;
+    margin-bottom:20px;
+    opacity:0;
+    visibility:hidden;
+}
+.form.is-visible{
+    opacity:1;
+    visibility: visible;
+    transition: opacity 0.2s ease-in-out,visibility 0.2s ease-in-out;
+    height: auto;
+}
+.form-label{
+    display:block;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+.form-input{
+    border:1px solid;
+    border-radius: 4px;
+    font-size: 20px;
+    width: 100%;
+    padding:10px;
+    box-sizing: border-box;
+}
+/*-----------------------------------------------
+*   Animation
+-----------------------------------------------*/
+@keyframes flash{
+    from, 50%, to{
+    opacity:0;
+}
+    25% , 75%{
+    opacity: 1;
+}
 }
